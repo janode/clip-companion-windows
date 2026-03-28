@@ -44,6 +44,18 @@ const Kbd = ({ children }: { children: string }) => (
   </span>
 );
 
+const ScrollArrow = ({ targetId }: { targetId: string }) => (
+  <motion.button
+    className="flex justify-center w-full pt-8 cursor-pointer bg-transparent border-none p-2"
+    animate={{ y: [0, 8, 0] }}
+    transition={{ repeat: Infinity, duration: 2 }}
+    onClick={() => document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth" })}
+    aria-label="Scroll to next section"
+  >
+    <ChevronRight className="w-5 h-5 text-muted-foreground rotate-90" />
+  </motion.button>
+);
+
 const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
