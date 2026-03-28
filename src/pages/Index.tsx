@@ -55,7 +55,7 @@ const Index = () => {
 
         <div className="relative z-10 text-center px-6 max-w-3xl mx-auto">
           <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, ease: "easeOut" }}>
-            <img src={trayIcon} alt="TinyClips icon" className="w-28 h-28 mx-auto mb-8 drop-shadow-2xl" />
+            <img src={trayIcon} alt="TinyClips icon" className="w-36 h-36 mx-auto mb-8 drop-shadow-2xl" />
           </motion.div>
 
           <motion.h1
