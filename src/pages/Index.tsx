@@ -100,13 +100,15 @@ const Index = () => {
         </div>
 
         {/* Scroll indicator */}
-        <motion.div
-          className="absolute bottom-10 left-1/2 -translate-x-1/2"
+        <motion.button
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 cursor-pointer bg-transparent border-none p-2"
           animate={{ y: [0, 8, 0] }}
           transition={{ repeat: Infinity, duration: 2 }}
+          onClick={() => document.getElementById("features")?.scrollIntoView({ behavior: "smooth" })}
+          aria-label="Scroll to features"
         >
           <ChevronRight className="w-5 h-5 text-muted-foreground rotate-90" />
-        </motion.div>
+        </motion.button>
       </section>
 
       {/* Features */}
