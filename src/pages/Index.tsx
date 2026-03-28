@@ -162,11 +162,12 @@ const Index = () => {
               </motion.div>
             ))}
           </div>
+          <ScrollArrow targetId="installation" />
         </div>
       </section>
 
       {/* Installation */}
-      <section className="py-28 px-6 relative">
+      <section id="installation" className="py-28 px-6 relative">
         <div className="absolute inset-0 bg-grid opacity-40 pointer-events-none" />
         <div className="max-w-4xl mx-auto relative z-10">
           <motion.div
@@ -206,11 +207,12 @@ const Index = () => {
               </motion.div>
             ))}
           </div>
+          <ScrollArrow targetId="shortcuts" />
         </div>
       </section>
 
       {/* Keyboard Shortcuts */}
-      <section className="py-28 px-6">
+      <section id="shortcuts" className="py-28 px-6">
         <div className="max-w-3xl mx-auto">
           <motion.div
             className="text-center mb-16"
@@ -250,11 +252,12 @@ const Index = () => {
               ))}
             </div>
           </motion.div>
+          <ScrollArrow targetId="cta" />
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-28 px-6 relative">
+      <section id="cta" className="py-28 px-6 relative">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full bg-primary/5 blur-[120px]" />
         </div>
