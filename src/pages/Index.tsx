@@ -112,7 +112,7 @@ const Index = () => {
       </section>
 
       {/* Features */}
-      <section className="py-28 px-6">
+      <section id="features" className="py-28 px-6">
         <div className="max-w-6xl mx-auto">
           <motion.div
             className="text-center mb-16"
