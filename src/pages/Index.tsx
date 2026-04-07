@@ -22,9 +22,9 @@ const features = [
 ];
 
 const steps = [
-  { num: "01", title: "Download", desc: "Grab the latest release for your architecture from GitHub Releases.", code: "TinyClips-x64.zip  or  TinyClips-arm64.zip" },
-  { num: "02", title: "Extract", desc: "Unzip to any folder, for example:", code: "C:\\Program Files\\TinyClips\\" },
-  { num: "03", title: "Run", desc: "Launch TinyClips.exe. It appears in your system tray — right-click to capture.", code: 'Enable "Launch at login" in Settings → General' },
+  { num: "01", title: "Install", desc: "Open a terminal and install TinyClips with a single command:", code: "winget install tinyclips" },
+  { num: "02", title: "Launch", desc: "TinyClips appears in your system tray — right-click the icon to start capturing.", code: 'Enable "Launch at login" in Settings → General' },
+  { num: "03", title: "Capture", desc: "Use the tray menu or global hotkeys to take screenshots, record video, or create GIFs.", code: "Ctrl+Alt+Shift+5  for instant screenshot" },
 ];
 
 const shortcuts = [
@@ -96,11 +96,9 @@ const Index = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.35, duration: 0.5 }}
           >
-            <Button size="lg" className="gap-2 text-base px-8 glow-primary" asChild>
-              <a href="https://github.com/janode/tiny-clips-win/releases/latest">
-                <Download className="w-5 h-5" />
-                Download Latest
-              </a>
+            <Button size="lg" className="gap-2 text-base px-8 glow-primary" onClick={() => { navigator.clipboard.writeText("winget install tinyclips"); import("sonner").then(m => m.toast.success("Copied to clipboard!")); }}>
+              <Monitor className="w-5 h-5" />
+              winget install tinyclips
             </Button>
             <Button size="lg" variant="outline" className="gap-2 text-base px-8 glass" asChild>
               <a href="https://github.com/janode/tiny-clips-win">
@@ -182,7 +180,7 @@ const Index = () => {
               Up and running in{" "}
               <span className="text-gradient">seconds</span>
             </h2>
-            <p className="text-muted-foreground text-lg">No installer required. Just download, extract, and go.</p>
+            <p className="text-muted-foreground text-lg">One command via winget. No manual downloads needed.</p>
           </motion.div>
 
           <div className="space-y-6">
@@ -275,12 +273,18 @@ const Index = () => {
           <p className="text-muted-foreground text-lg mb-10 max-w-md mx-auto">
             TinyClips is free, open-source, and built for speed. Give it a try.
           </p>
-          <Button size="lg" className="gap-2 text-base px-10 glow-primary" asChild>
-            <a href="https://github.com/janode/tiny-clips-win/releases/latest">
-              <Download className="w-5 h-5" />
-              Download TinyClips
-            </a>
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="gap-2 text-base px-10 glow-primary" onClick={() => { navigator.clipboard.writeText("winget install tinyclips"); import("sonner").then(m => m.toast.success("Copied to clipboard!")); }}>
+              <Monitor className="w-5 h-5" />
+              winget install tinyclips
+            </Button>
+            <Button size="lg" variant="outline" className="gap-2 text-base px-8 glass" asChild>
+              <a href="https://github.com/janode/tiny-clips-win/releases/latest">
+                <Download className="w-5 h-5" />
+                Manual Download
+              </a>
+            </Button>
+          </div>
         </motion.div>
       </section>
 
