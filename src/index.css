@@ -64,8 +64,7 @@
 
 @layer utilities {
   .glass {
-    background: hsl(var(--surface-glass) / 0.6);
-    backdrop-filter: blur(24px);
+    background: hsl(var(--surface-glass) / 0.85);
     border: 1px solid hsl(var(--border) / 0.5);
   }
 
