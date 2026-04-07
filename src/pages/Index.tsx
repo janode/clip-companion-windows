@@ -12,6 +12,14 @@ const fadeUp = {
   }),
 };
 
+const featureCardReveal = {
+  hidden: { opacity: 0 },
+  visible: (i: number) => ({
+    opacity: 1,
+    transition: { delay: i * 0.06, duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] },
+  }),
+};
+
 const features = [
   { icon: Camera, title: "Screenshots", desc: "Capture a region, full screen, or window. Saves as PNG or JPEG with instant clipboard copy." },
   { icon: Video, title: "Video Recording", desc: "Record any region or your full screen to H.264 MP4. Built-in timer and stop controls." },
@@ -145,11 +153,11 @@ const Index = () => {
             {features.map((f, i) => (
               <motion.div
                 key={f.title}
-                className="group glass rounded-2xl p-6 hover:border-primary/30 transition-all duration-300"
+                className="group glass rounded-2xl p-6 hover:border-primary/30 transition-colors duration-300"
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, margin: "-40px" }}
-                variants={fadeUp}
+                viewport={{ once: true, amount: 0.2 }}
+                variants={featureCardReveal}
                 custom={i}
               >
                 <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
